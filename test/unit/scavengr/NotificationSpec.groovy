@@ -20,7 +20,34 @@ class NotificationSpec extends Specification {
         when:
         def n = new Notification(sender: new User(), recipient: new User(), 
             subject:'hello', message:'how are you', action:'leave here', link:'google.com')
-        then:
+		
+		def n1 = new Notification(sender: new User(), recipient: new User(),
+			subject:'hellohellohellohellohelloh6543', message:'how are you', action:'leave here', link:'google.com')
+        
+		
+		then:
         n.validate()
+		!n1.validate()
     }
+	
+	def "testToString"() {
+		when:
+		def n = new Notification(sender: new User(), recipient: new User(), 
+            subject:'hello', message:'how are you', action:'leave here', link:'google.com')
+		
+		then:
+		n.toString() == 'hello'
+	}
+	
+	def "testequals"() {
+		when:
+		def n = new Notification(sender: new User(), recipient: new User(), 
+            subject:'hello', message:'how are you', action:'leave here', link:'google.com')
+		
+		def n1 = new Notification(sender: new User(), recipient: new User(),
+			subject:'hellohellohellohellohelloh6543', message:'how are you', action:'leave here', link:'google.com')
+		
+		then:
+		n.equals(n1) == true
+	}
 }
