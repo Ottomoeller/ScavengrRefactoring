@@ -38,14 +38,13 @@ class UserShowPageSpec extends GebReportingSpec {
 		confirmEmailButton.click()
 	}
 	
-//	def 'when you log in you will be at the user show page'() {
-//		when:
-//		createUser('Walter', 'Walter@example.com', 'password')
-//		loginAs('Walter', 'password')
-//		
-//		then:
-//		at UserShowPage
-//	}
+	def 'when you log in you will be at the user show page'() {
+		when:
+		loginAs('Walter', 'password')
+		
+		then:
+		at UserShowPage
+	}
 //	
 //
 //    def 'redirects to create a hunt page when create hunt is clicked'() {
