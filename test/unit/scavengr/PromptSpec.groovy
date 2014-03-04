@@ -43,4 +43,13 @@ class PromptSpec extends Specification {
         prompt5.toString() == p5
         prompt6.toString() == p6
     }
+	
+	def "testequals"() {
+		when:
+		def prompt7 = new Prompt(title: 'testPrompt7', description: 'testPromptDescription7', myHunt: new Hunt())
+		def prompt8 = new Prompt(title: 'testPrompt7', description: 'testPromptDescription7', myHunt: new Hunt())
+		
+		then:
+		prompt7 == prompt8
+	}
 }
