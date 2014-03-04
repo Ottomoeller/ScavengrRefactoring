@@ -56,4 +56,13 @@ class UserSpec extends Specification {
 		user9.toString() == u9
 		user10.toString() == u10
 	}
+	
+	def "testequals"() {
+		when:
+		def user11 = new User(login: 'testUser11', email: 'testUser11@email.com', password: 'testUserPassword11')
+		def user12 = new User(login: 'testUser11', email: 'testUser11@email.com', password: 'testUserPassword11')
+		
+		then:
+		user11 == user12
+	}
 }
