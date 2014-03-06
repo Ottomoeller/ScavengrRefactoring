@@ -18,17 +18,8 @@ class HomePage extends Page {
             findHuntButton() {$(input, value:'Go!')}
             viewPublicHunts(to: ListOfHuntsPage) {$(a, text: 'View Public Hunts')}
             enterKeyBox() {$(input, name:'key')}
-            
-            
+             
             createAHuntButton() {$('div', id: 'create')}
-			
-/////////////User show page buttons////////////////////////////////////////////////////////////
-			userCreateAHuntButton(){$(a, text:'Create Hunt')}
-			
-//			changeEmail{$()(a, id:'changeEmail')}
-//			newEmail(){$(a, id:'newEmail')}
-//			confirmEmail(){$(a, id:'confirmEmail')}
-//			confirmEmailButton(){$('button', id:'submitEmail')}
 			
 			downloadPhotos(){$(a, text:'Download My Photos')}
 			
@@ -53,8 +44,6 @@ class HomePage extends Page {
             createButton() {$(button, id:'submitSignup')}
             closeButton() {$(button, text:'×')}
 			
-		
-            
             //Buttons that appear in user session
             //this is the button at the top of the page when you are logged in
             navbarCreateButton(to: CreateAHuntPage) {$(a, text: 'Create A Hunt')}

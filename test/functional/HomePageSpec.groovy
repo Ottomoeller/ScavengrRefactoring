@@ -162,17 +162,16 @@ class HomePageSpec extends GebReportingSpec{
         
     }
     
-    //This test currently does not work but should at some point. 
-    /*def 'entering an incorrect key keeps you at the home page'() {
+    def 'entering an incorrect key keeps you at the home page'() {
         when:
         to HomePage
         enterKeyBox.value('incorrectkey')
         findHuntButton.click()
         
         then:
-        at HomePage
+        at ListOfHuntsPage
         
-    }*/
+    }
     
 
 
