@@ -11,7 +11,8 @@ class UserShowPage extends Page {
         }
         
         def a = 'a'
-        
+        def input = 'input'
+		def button = 'button'
         static content = {
             //This button currently does not work
           //  createAHuntButton(to: CreateHuntPage) {$('li.g', text: endsWith('Create Hunt') )}
@@ -25,10 +26,10 @@ class UserShowPage extends Page {
             userCreateAHuntButton(){$(a, text:'Create Hunt')}
 			
 			
-//			changeEmail{$()(a, id:'changeEmail')}
-//			newEmail(){$(a, id:'newEmail')}
-//			confirmEmail(){$(a, id:'confirmEmail')}
-//			confirmEmailButton(){$('button', id:'submitEmail')}
+			changeEmail(){$(a, id:'changeEmail')}
+			newEmail(){$(input, id:'newEmail')}
+			confirmEmail(){$(input, id:'confirmEmail')}
+			confirmEmailButton(){$(button, id:'submitEmail')}
 			
 			downloadPhotos(){$(a, text:'Download My Photos')}
 			

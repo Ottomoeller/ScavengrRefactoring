@@ -56,6 +56,8 @@ class UserShowPageSpec extends GebReportingSpec {
         at CreateAHuntPage
     }
 	
+
+	
 	
 	def 'after changing password you are on the user show page'() {
 		when:
@@ -68,6 +70,7 @@ class UserShowPageSpec extends GebReportingSpec {
 	
 //	def 'after changing your Email you are on the user show page'() {
 //		when:
+//		to HomePage
 //		loginAs('Walter','password')
 //		switchEmail('newEmail@example.aaa')
 //		
