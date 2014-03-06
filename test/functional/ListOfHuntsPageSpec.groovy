@@ -16,6 +16,4 @@ class ListOfHuntsPageSpec extends GebReportingSpec {
 	}
 }
 
-class ListOfHuntsPageSpec {
 
-}
