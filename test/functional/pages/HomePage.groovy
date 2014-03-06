@@ -6,6 +6,7 @@ import geb.Page
 class HomePage extends Page {
         def input = 'input'
         def a = 'a'
+		def button = 'button'
         static uri = ' '
         
         static at = {
@@ -31,10 +32,10 @@ class HomePage extends Page {
 			
 			downloadPhotos(){$(a, text:'Download My Photos')}
 			
-			currentPasswordBox(){$('input', id:'changePassword')}
-			newPasswordBox(){$('input', id:'newPassword')}
-			confirmNewPasswordBox(){$('input', id:'confirmPassword')}
-			confirmPasswordButton(){$('button', id:'submitChange')}
+			currentPasswordBox(){$(input, id:'changePassword')}
+			newPasswordBox(){$(input, id:'newPassword')}
+			confirmNewPasswordBox(){$(input, id:'confirmPassword')}
+			confirmPasswordButton(){$(button, id:'submitChange')}
 			changePassword(){$(a, text:'Change Password')}
             
             //Fields for Log in
@@ -49,8 +50,8 @@ class HomePage extends Page {
             passwordBox() {$(input, id:'passwordSignup')}
             confirmPasswordBox() {$(input, id:'confirmSignup')}
             
-            createButton() {$('button', id:'submitSignup')}
-            closeButton() {$('button', text:'×')}
+            createButton() {$(button, id:'submitSignup')}
+            closeButton() {$(button, text:'×')}
 			
 		
             
