@@ -32,7 +32,7 @@ class HomePage extends Page {
             //Fields for Log in
             loginUserNameBox() {$(input, id: 'loginUsername')}
             loginPasswordBox() {$(input, id: 'loginPassword')}
-            loginButton() {$(input, id:'loginButton')}
+            loginButton(to: UserShowPage) {$(input, id:'loginButton')}
             createAccountButton() {$(a, text: 'Create Account')}
             
             //Fields for Popup Sign up

@@ -9,7 +9,7 @@ class HuntShowPage extends Page {
     
     static content = {
 		
-//		editHuntButton(to: HuntEditPage){$('a', name:'editHunt')}
+		editButton(to: HuntEditPage){$('a', text:'Edit Hunt')}
 //		deleteButton(){$('button', name:'_action_delete')}
 //		creatorLink(to: UserShowPage){$('a', name: 'creatorLink')}
 //		

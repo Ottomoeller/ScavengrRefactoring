@@ -38,5 +38,7 @@ class UserShowPage extends Page {
 			newPasswordBox(){$('input', id:'newPassword')}
 			confirmNewPasswordBox(){$('input', id:'confirmPassword')}
 			confirmPasswordButton(){$('button', id:'submitChange')}
+			
+			showTrees(to: HuntShowPage){$('a', text:'Trees')}
         }
 }

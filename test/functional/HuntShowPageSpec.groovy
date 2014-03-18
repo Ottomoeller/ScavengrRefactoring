@@ -3,6 +3,7 @@ import spock.lang.*
 import pages.*
 
 class HuntShowPageSpec extends GebReportingSpec {
+	
 	private loginAs(user, password) {
 		to HomePage
 		loginUserNameBox.value(user)
@@ -10,8 +11,22 @@ class HuntShowPageSpec extends GebReportingSpec {
 		loginButton.click()
 	}
 		
-	private goToHuntShowPage() {
+	def 'go to hunt show page'() {
+		when:
 		loginAs('Walter', 'password')
-		viewPublicHunts.click()
+		showTrees.click()
+		
+		then:
+		at HuntShowPage
+	}
+	
+	def 'go to hunt edit page'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		editButton.click()
+		
+		then:
+		at HuntEditPage
 	}
 }
