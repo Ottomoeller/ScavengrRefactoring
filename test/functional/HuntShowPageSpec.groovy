@@ -11,7 +11,7 @@ class HuntShowPageSpec extends GebReportingSpec {
 		loginButton.click()
 	}
 		
-	def 'go to hunt show page'() {
+	def 'can get to HuntShowPage'() {
 		when:
 		loginAs('Walter', 'password')
 		showTrees.click()
@@ -20,7 +20,7 @@ class HuntShowPageSpec extends GebReportingSpec {
 		at HuntShowPage
 	}
 	
-	def 'go to hunt edit page'() {
+	def 'edit hunt button goes to HuntEditPage'() {
 		when:
 		loginAs('Walter', 'password')
 		showTrees.click()
@@ -28,5 +28,48 @@ class HuntShowPageSpec extends GebReportingSpec {
 		
 		then:
 		at HuntEditPage
+	}
+	
+	def 'creator link goes to UserShowPage'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		creatorLink.click()
+		
+		then:
+		at UserShowPage
+	}
+	
+	def 'clicking a prompt goes to PromptShowPage'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		oakLink.click()
+		
+		then:
+		at PromptShowPage
+	}
+	
+	def 'can add a Prompt'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		newPromptTitleField.value('New Prompt')
+		newPromptDescriptionField.value('Desc')
+		newPromptSubmitButton.click()
+		
+		then:
+		at HuntShowPage
+	}
+	
+	def 'can lock-in a hunter'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		hunterName.value('Billy')
+		hunterSubmitButton.click()
+		
+		then:
+		at HuntShowPage
 	}
 }
