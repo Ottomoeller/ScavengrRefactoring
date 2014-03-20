@@ -84,6 +84,17 @@ class PromptController {
         return true
     }
 
+		
+	def promptNotFound() {
+		if (!promptInstance) {
+			flash.message = message(code: 'default.not.found.message',
+			args: [message(codeDefaultPrompt), params.id])
+			redirect actionList
+			return
+		}
+	}
+	
+	
     def edit() {
         if (session.hunter != null) {
             redirect action: 'show', controller: 'hunt', params: [key: session.key]
@@ -97,12 +108,7 @@ class PromptController {
                         redirect action: showAction, id: promptInstance.id
                         return
                     }
-                    if (!promptInstance) {
-                        flash.message = message(code: 'default.not.found.message',
-                        args: [message(codeDefaultPrompt), params.id])
-                        redirect actionList
-                        return
-                    }
+                    promptNotFound()
                     params.max = Math.min(params.max ? params.int('max') : 8, 100)
                     def photoInstanceList = Photo.findAllByMyPrompt(
                             promptInstance, [max:params.max, offset:params.offset])
@@ -117,12 +123,7 @@ class PromptController {
                         redirect action: showAction, id: promptInstance.id
                         return
                     }
-                    if (!promptInstance) {
-                        flash.message = message(code: 'default.not.found.message',
-                        args: [message(codeDefaultPrompt), params.id])
-                        redirect actionList
-                        return
-                    }
+                    promptNotFound()
 
 
                     if (params.version) {
@@ -153,12 +154,7 @@ class PromptController {
                 redirect action: showAction, id: promptInstance.id
                 return
             }
-            if (!promptInstance) {
-                flash.message = message(code: 'default.not.found.message',
-                args: [message(codeDefaultPrompt), params.id])
-                redirect actionList
-                return
-            }
+            promptNotFound()
             def key = promptInstance.myHunt.key
             try {
                 promptInstance.myPhotos.each { photo ->
