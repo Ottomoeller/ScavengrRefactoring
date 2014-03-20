@@ -72,4 +72,59 @@ class HuntShowPageSpec extends GebReportingSpec {
 		then:
 		at HuntShowPage
 	}
+	
+	def 'can add a Participant'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		addUserNameField.value('Edward')
+		addUserSubmitButton.click()
+		
+		then:
+		at HuntShowPage
+	}
+	
+	def 'can add an Administrator'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		addAdminNameField.value('Edward')
+		addAdminSubmitButton.click()
+		
+		then:
+		at HuntShowPage
+	}
+	
+	def 'can Download Photos'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		downloadPhotosButton.click()
+		
+		
+		then:
+		at HuntShowPage
+	}
+	
+	def 'can Close Hunt'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		closeHunt.click()
+		
+		
+		then:
+		at HuntShowPage
+	}
+	
+	def 'can Delete Hunt'() {
+		when:
+		loginAs('Walter', 'password')
+		showTrees.click()
+		deleteButton.click()
+		
+		
+		then:
+		at ListOfHuntsPage
+	}
 }

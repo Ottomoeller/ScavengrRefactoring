@@ -17,15 +17,17 @@ class HuntShowPage extends Page {
 		newPromptSubmitButton(){$('button', id:'new-prompt-submit')}
 		hunterName(){$('input', name:'hunter')}
 		hunterSubmitButton(){$('button', text:'Lock In')}
-//		deleteButton(){$('button', name:'_action_delete')}
-//		
-//		addUserNameField(){$('input', id:'user')}
-//		addUserSubmitButton(){$('button', id: 'new-participant-submit')}
-//		
-//		addAdminNameField(){$('input', id: 'admin-login')}
-//		addAdminSubmitButton(){$('button', id: 'new-admin-submit')}
-//		
-//		downloadPhotosButton(){$('button', name: '_action_downloadPhotos')}
+		deleteButton(to: ListOfHuntsPage){$('button', text:'Delete Hunt')}
+		
+		addUserNameField(){$('input', id:'user')}
+		addUserSubmitButton(){$('button', id: 'new-participant-submit')}
+		
+		addAdminNameField(){$('input', id: 'admin-login')}
+		addAdminSubmitButton(){$('button', id: 'new-admin-submit')}
+		
+		downloadPhotosButton(){$('button', name: '_action_downloadPhotos')}
+		
+		closeHunt(){$('button', text:'Close Hunt')}
 		
     }
 
