@@ -14,12 +14,15 @@ class PromptController {
 
     def authenticationService
     static allowedMethods = [create: getPost, edit: getPost, delete: getPost[1]]
-
+	
+	def isLockedIn() {
+		if (session.hunter != null) {
+			redirect action: 'show', controller: 'hunt', params: [key: session.key]
+		}
+	}
 
     def create() {
-        if (session.hunter != null) {
-            redirect action: 'show', controller: 'hunt', params: [key: session.key]
-        } else {
+        isLockedIn()
             switch (request.method) {
                 case getPost[0]:
                     [promptInstance: new Prompt(params)]
@@ -37,7 +40,6 @@ class PromptController {
                     args: [message(codeDefaultPrompt), promptInstance.id])
                     redirect controller: huntCon, action: showAction, params: [key: promptInstance.myHunt.key]
                     break
-            }
         }
     }
 
@@ -96,9 +98,7 @@ class PromptController {
 	
 	
     def edit() {
-        if (session.hunter != null) {
-            redirect action: 'show', controller: 'hunt', params: [key: session.key]
-        } else {
+        isLockedIn()
             switch (request.method) {
                 case getPost[0]:
                     def promptInstance = Prompt.get(params.id)
@@ -141,14 +141,12 @@ class PromptController {
                     args: [message(codeDefaultPrompt), promptInstance.id])
                     redirect action: showAction, id: promptInstance.id
                     break
-            }
+            
         }
     }
 
     def delete() {
-        if (session.hunter != null) {
-            redirect action: 'show', controller: 'hunt', params: [key: session.key]
-        } else {
+        isLockedIn()
             def promptInstance = Prompt.get(params.id)
             if (!isAdminOrCreator(User.findByLogin(auth.user()) , promptInstance.myHunt)) {
                 redirect action: showAction, id: promptInstance.id
@@ -172,6 +170,6 @@ class PromptController {
                 args: [message(codeDefaultPrompt), params.id])
                 redirect action: showAction, id: params.id
             }
-        }
+        
     }
 }
