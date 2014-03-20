@@ -85,7 +85,7 @@ class PromptController {
     }
 
 		
-	def promptNotFound() {
+	def promptNotFound(promptInstance) {
 		if (!promptInstance) {
 			flash.message = message(code: 'default.not.found.message',
 			args: [message(codeDefaultPrompt), params.id])
@@ -108,7 +108,7 @@ class PromptController {
                         redirect action: showAction, id: promptInstance.id
                         return
                     }
-                    promptNotFound()
+                    promptNotFound(promptInstance)
                     params.max = Math.min(params.max ? params.int('max') : 8, 100)
                     def photoInstanceList = Photo.findAllByMyPrompt(
                             promptInstance, [max:params.max, offset:params.offset])
@@ -123,7 +123,7 @@ class PromptController {
                         redirect action: showAction, id: promptInstance.id
                         return
                     }
-                    promptNotFound()
+                    promptNotFound(promptInstance)
 
 
                     if (params.version) {
@@ -154,7 +154,7 @@ class PromptController {
                 redirect action: showAction, id: promptInstance.id
                 return
             }
-            promptNotFound()
+            promptNotFound(promptInstance)
             def key = promptInstance.myHunt.key
             try {
                 promptInstance.myPhotos.each { photo ->
