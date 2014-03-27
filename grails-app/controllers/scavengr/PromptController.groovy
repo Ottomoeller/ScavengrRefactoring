@@ -136,7 +136,7 @@ class PromptController {
                             return
                         }
                     }
-
+					promptInstance.properties = params;
                     flash.message = message(code: 'default.updated.message',
                     args: [message(codeDefaultPrompt), promptInstance.id])
                     redirect action: showAction, id: promptInstance.id
