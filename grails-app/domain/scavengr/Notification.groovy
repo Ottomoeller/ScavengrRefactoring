@@ -21,10 +21,7 @@ class Notification {
         return subject
     }
     boolean equals(n){
-        if(n.getClass() != Notification){
-            return false
-        }
-        if(n.id != this.id){
+        if((n.getClass() != Notification) || (n.id != this.id)){
             return false
         }
         return true
