@@ -20,13 +20,10 @@ class Notification {
     String toString(){
         return subject
     }
-    boolean equals(n){
-        if(n.getClass() != Notification){
+    boolean equals(notification){
+        if(notification.getClass() != Notification){
             return false
         }
-        if(n.id != this.id){
-            return false
-        }
-        return true
+         return notification.id == this.id
     }
 }

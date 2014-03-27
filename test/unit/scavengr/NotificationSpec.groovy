@@ -1,6 +1,6 @@
 package scavengr
 
-import grails.test.mixin.TestFor
+import grails.test.mixin.TestFor 
 import scavengr.Notification
 import spock.lang.Specification
 
@@ -10,24 +10,28 @@ import spock.lang.Specification
 @TestFor(Notification)
 class NotificationSpec extends Specification {
 
-    def setup() {
+    def setup() { 
     }
 
     def cleanup() {
     }
+	
+	def notificationValid = new Notification(sender: new User(), recipient: new User(), 
+            subject:'hello', message:'how are you', action:'leave here', link:'google.com')
+	
+	def notificationInvalid = new Notification(sender: new User(), recipient: new User(),
+			subject:'hellohellohellohellohelloh6543', message:'how are you', action:'leave here', link:'google.com')
 
     void 'test notification creation'() {
         when:
-        def n = new Notification(sender: new User(), recipient: new User(), 
-            subject:'hello', message:'how are you', action:'leave here', link:'google.com')
-		
-		def n1 = new Notification(sender: new User(), recipient: new User(),
-			subject:'hellohellohellohellohelloh6543', message:'how are you', action:'leave here', link:'google.com')
+        notificationValid
+		notificationInvalid
+	
         
 		
 		then:
-        n.validate()
-		!n1.validate()
+        notificationValid.validate()
+		!notificationInvalid.validate()
     }
 	
 	def "testToString"() {
@@ -41,13 +45,12 @@ class NotificationSpec extends Specification {
 	
 	def "testequals"() {
 		when:
-		def n = new Notification(sender: new User(), recipient: new User(), 
-            subject:'hello', message:'how are you', action:'leave here', link:'google.com')
+	    notificationValid
+		notificationInvalid
 		
-		def n1 = new Notification(sender: new User(), recipient: new User(),
-			subject:'hellohellohellohellohelloh6543', message:'how are you', action:'leave here', link:'google.com')
-		
+		notificationValid.save()
+		notificationInvalid.save()
 		then:
-		n.equals(n1) == true
+		notificationValid.equals(notificationInvalid) == false
 	}
 }
