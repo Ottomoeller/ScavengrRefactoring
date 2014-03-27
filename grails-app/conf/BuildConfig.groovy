@@ -4,7 +4,7 @@ grails.project.test.class.dir = 'target/test-classes'
 grails.project.test.reports.dir = 'target/test-reports'
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
-grails.server.port.http = 4206
+grails.server.port.http = 1337
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
 grails.project.dependency.resolution = {

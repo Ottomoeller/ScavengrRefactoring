@@ -4,7 +4,7 @@ import org.apache.commons.collections.FactoryUtils
 import org.apache.commons.collections.ListUtils
 
 class Hunt {
-    String title
+    String title // test commit
     String description
     boolean isPrivate = true
 
