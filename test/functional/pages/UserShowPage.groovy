@@ -25,7 +25,7 @@ class UserShowPage extends Page {
             navbarCreateButton(to: CreateAHuntPage){$(a, text: 'Create A Hunt')}
             userCreateAHuntButton(){$(a, text:'Create Hunt')}
 			
-			
+			scavengrButton(to: HomePage) {$(a , text: 'Scavengr')}
 			changeEmail(){$(a, id:'changeEmail')}
 			newEmail(){$(input, id:'newEmail')}
 			confirmEmail(){$(input, id:'confirmEmail')}

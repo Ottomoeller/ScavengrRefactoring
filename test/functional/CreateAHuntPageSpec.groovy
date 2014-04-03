@@ -15,7 +15,7 @@ class CreateAHuntPageSpec extends GebReportingSpec {
         loginAs('Walter', 'password')
         navbarCreateButton.click()
     }
-/*    
+ 
     def 'can navigate to create a hunt page'() {
         when:
         goToCreateHuntPage()
@@ -70,7 +70,7 @@ class CreateAHuntPageSpec extends GebReportingSpec {
         huntEndDate.value('04/25/2099 02:45 AM')
         emailBox.value('anemail@email.com')
         emailButton.click()
-        prompviewPublicHuntstTitleBox.value('Animals')
+        promptTitleBox.value('Animals')
         promptDescriptionBox.value('Take pictures of them.')
         addPromptButton.click()
         createHuntButton.click()
@@ -110,5 +110,5 @@ class CreateAHuntPageSpec extends GebReportingSpec {
         then:
         at CreateAHuntPage
     }
-*/    
+   
 }

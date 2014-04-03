@@ -23,7 +23,7 @@ class HomePageSpec extends GebReportingSpec{
         confirmPasswordBox.value(password)
         createButton.click()
     }
-/*
+
     def 'can reach the home page'() {
         when:
         to HomePage
@@ -146,13 +146,16 @@ class HomePageSpec extends GebReportingSpec{
 
     def 'log in with incorrect password'() {
         when:
-        loginAs(stuff123, 'incorrectpassword')
+        to HomePage
+ 		loginUserNameBox.value('stuff123')
+ 		loginPasswordBox.value('incorrectpassword')
+ 		loginButtonWrongPassword.click()
         then:
         at HomePage
     }
     
     def 'entering a key brings you to a hunt'() {
-        when:Fixed a test in CreateAHuntPageSpec
+        when:
         to HomePage
         enterKeyBox.value('yfe5mejs2a')
         findHuntButton.click()
@@ -173,6 +176,6 @@ class HomePageSpec extends GebReportingSpec{
         
     }
     
-*/
+
 
 }
