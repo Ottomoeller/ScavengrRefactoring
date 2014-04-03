@@ -1,0 +1,16 @@
+Testsuite: scavengr.NotificationSpec
+Tests run: 3, Failures: 0, Errors: 0, Time elapsed: 0.768 sec
+------------- Standard Output ---------------
+--Output from test notification creation--
+--Output from testToString--
+--Output from testequals--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from test notification creation--
+--Output from testToString--
+--Output from testequals--
+------------- ---------------- ---------------
+
+Testcase: test notification creation took 0.615 sec
+Testcase: testToString took 0.043 sec
+Testcase: testequals took 0.092 sec
