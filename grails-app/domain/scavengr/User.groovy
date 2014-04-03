@@ -31,10 +31,7 @@ class User {
             return "$login"
 	}
     boolean equals(user){
-        if(user.getClass() != User){
-            return false
-        }
-        if(user.id != this.id){
+		if((user.getClass() != User) || (user.id != this.id)){
             return false
         }
         return true

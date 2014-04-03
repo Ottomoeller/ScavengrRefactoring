@@ -24,12 +24,8 @@ class Prompt {
     String toString() {
         return "$title"
     }
-    
-    boolean equals(p){
-        if(p.getClass() != Prompt){
-            return false
-        }
-        if(p.id != this.id){
+	boolean equals(prompt){
+        if((prompt.getClass() != Prompt) || (prompt.id != this.id)){
             return false
         }
         return true

@@ -29,12 +29,8 @@ class Photo {
     String toString() {
         return "$title"
     }
-    
-    boolean equals(p){
-        if(p.getClass() != Photo){
-            return false
-        }
-        if(p.id != this.id){
+	boolean equals(photo){
+		if((photo.getClass() != Photo) || (photo.id != this.id)){
             return false
         }
         return true

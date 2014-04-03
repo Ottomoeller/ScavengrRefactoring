@@ -65,10 +65,7 @@ class Hunt {
         generateKey()
     }
     boolean equals(hunt){
-        if(hunt.getClass() != Hunt){
-            return false
-        }
-        if(hunt.id != this.id){
+		if((hunt.getClass() != Hunt) || (hunt.id != this.id)){
             return false
         }
         return true
